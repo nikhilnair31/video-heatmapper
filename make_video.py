@@ -3,21 +3,13 @@ import os
 import re
 from progress.bar import Bar
 
-"""
-A utility function to merge together many frames into a video.
-
-"""
-
-
+# A helper function to return digits inside text
 def atoi(text):
-    # A helper function to return digits inside text
     return int(text) if text.isdigit() else text
 
-
+# A helper function to generate keys for sorting frames AKA natural sorting
 def natural_keys(text):
-    # A helper function to generate keys for sorting frames AKA natural sorting
     return [atoi(c) for c in re.split(r'(\d+)', text)]
-
 
 def make_video(image_folder, video_name):
     images = [img for img in os.listdir(image_folder)]
